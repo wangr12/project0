@@ -16,10 +16,17 @@ public class passwordgenerator {
     // constructor
     public passwordgenerator() {
         // generate random length between 8 and 30
-        this.length = (int) (Math.random() * 23) + 8;
-        this.numLetters = (int) (Math.random() * this.length);
-        this.numNumbers = (int) (Math.random() * this.length-this.numSpecialChars);
+        this.length = rand.nextInt(8,31);
+        this.numLetters = rand.nextInt(this.length+1);
+        this.numNumbers = rand.nextInt(this.length - this.numLetters + 1);
         this.numSpecialChars = this.length - this.numLetters - this.numNumbers;
+    }
+
+    public passwordgenerator(int length, int numSpecialChars, int numNumbers, int numLetters) {
+        this.length = length;
+        this.numSpecialChars = numSpecialChars;
+        this.numNumbers = numNumbers;
+        this.numLetters = numLetters;
     }
 
     // generate password with random letters, numbers, and special characters in random order

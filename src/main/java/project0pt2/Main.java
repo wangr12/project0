@@ -2,7 +2,7 @@ package project0pt2;
 
 public class Main {
     public static void main(String[] args) {
-        passwordgenerator password = new passwordgenerator();
+        passwordgenerator password = new passwordgenerator(15, 3, 4, 8);
         System.out.println(password);
 
         passwordgenerator[] passwords = new passwordgenerator[5];
